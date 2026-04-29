@@ -28,7 +28,7 @@
 - 只有用户明确在改进 skill 或把笔记蒸馏成可复用方法时，才写 `references/*.md`。
 - 方法应用到具体项目并形成局部结论、caveat 或决策时，写子项目记忆。
 - 结果是公司级定义、共享规则或稳定跨项目决策时，写父项目记忆。
-- 不要把原始 Logseq 笔记、截图、PDF、书摘或复制来源文本写进项目记忆或 skill references。
+- 不要把原始笔记、截图、PDF、书摘或复制来源文本写进项目记忆或 skill references。
 - 不确定是方法还是事实时，方法保留为短规则；事实写入正确项目记忆文件。
 
 ## Promote vs Append
@@ -120,11 +120,11 @@
 
 ## 全局记忆提升规则
 
-项目记忆默认是本地的。只有 lesson 非显而易见、跨项目可复用或可能复发时，才提升到 `/Users/yujie/.codex/memories`。
+项目记忆默认是本地的。只有 lesson 非显而易见、跨项目可复用或可能复发时，才提升到全局长期记忆目录。
 
-- `/Users/yujie/.codex/memories/LEARNINGS.md`：可复用分析实践、纠正后的假设、持久工作流改进、跨项目业务/数据启发式。
-- `/Users/yujie/.codex/memories/ERRORS.md`：可能复发的意外失败、debug notes、数据陷阱或流程错误。
-- `/Users/yujie/.codex/memories/FEATURE_REQUESTS.md`：用户想要的缺失能力。
+- `$CODEX_HOME/memories/LEARNINGS.md`：可复用分析实践、纠正后的假设、持久工作流改进、跨项目业务/数据启发式。
+- `$CODEX_HOME/memories/ERRORS.md`：可能复发的意外失败、debug notes、数据陷阱或流程错误。
+- `$CODEX_HOME/memories/FEATURE_REQUESTS.md`：用户想要的缺失能力。
 
 不要提升一次性项目事实、敏感细节、raw SQL、临时指标或客户专属背景，除非用户明确要求。
 

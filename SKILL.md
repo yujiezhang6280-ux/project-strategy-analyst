@@ -76,7 +76,7 @@ methodology references 是共享分析手册，只指导如何推理，不存项
 - 只加载最小方法集合，默认 1-3 个文件。
 - SQL 是独立工作流：有 SQL 时先读 `references/sql-decomposition-checklist.md`，再按问题需要补充诊断、指标、因果、统计、建模或报告方法。
 - 可复用方法写 skill references；公司事实写父项目 `_project_memory/`；子项目事实写子项目 `_project_memory/`。
-- 不要把原始 Logseq 页面、截图、PDF、书摘、公司事实、项目事实或长摘录写进 skill。
+- 不要把原始笔记页面、截图、PDF、书摘、公司事实、项目事实或长摘录写进 skill。
 - 蒸馏笔记时，只产出短规则、使用场景和来源路径；不要复制长原文。
 - 方法与项目记忆或用户事实冲突时，以用户事实和项目记忆为准；方法只提供分析结构。
 - 没有合适方法文件时，先用 `references/note-distillation.md` 形成候选方法摘要，再决定是否改 skill。
@@ -198,7 +198,7 @@ methodology references 是共享分析手册，只指导如何推理，不存项
   - 失败假设或数据陷阱
   - 可复用 SQL 或指标模式
   - 后续机会
-- 每次复盘后，评估是否有 lesson 应复制到 `/Users/yujie/.codex/memories`。
+- 每次复盘后，评估是否有 lesson 应复制到全局长期记忆目录。
 
 ## Token Budget
 
@@ -245,9 +245,9 @@ methodology references 是共享分析手册，只指导如何推理，不存项
 
 全局记忆路由：
 
-- `/Users/yujie/.codex/memories/LEARNINGS.md`：可复用分析实践、纠错、业务/数据分析启发式、持久用户偏好。
-- `/Users/yujie/.codex/memories/ERRORS.md`：可能复发的工具失败、数据陷阱、debug 记录或错误。
-- `/Users/yujie/.codex/memories/FEATURE_REQUESTS.md`：用户希望补齐的能力或工作流优化。
+- `$CODEX_HOME/memories/LEARNINGS.md`：可复用分析实践、纠错、业务/数据分析启发式、持久用户偏好。
+- `$CODEX_HOME/memories/ERRORS.md`：可能复发的工具失败、数据陷阱、debug 记录或错误。
+- `$CODEX_HOME/memories/FEATURE_REQUESTS.md`：用户希望补齐的能力或工作流优化。
 
 不要把敏感项目细节、一次性指标或临时背景写进全局记忆，除非用户明确要求。
 

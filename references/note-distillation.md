@@ -1,6 +1,6 @@
 # 笔记蒸馏
 
-用于把 Logseq 页面、journals、highlights、图片、PDF 或其他笔记转成此 skill 可复用的方法论。
+用于把笔记页面、日记、highlights、图片、PDF 或其他材料转成此 skill 可复用的方法论。
 
 ## 目标
 
@@ -8,13 +8,13 @@
 
 ## 来源优先级
 
-1. 标题或链接明显是方法论的 `pages/*.md`。
-2. 指向分析、产品、增长、统计、算法或报告材料的 `hls__*.md`。
-3. `journals/*.md` 中明确的反思、复盘、分析规则或反复纠错。
+1. 标题或链接明显是方法论的笔记页面。
+2. 指向分析、产品、增长、统计、算法或报告材料的 highlights。
+3. 日记或复盘中明确的分析规则、反复纠错或稳定方法。
 4. 图片或 PDF：只有相关 markdown 页面说明它为什么重要时才处理。
 5. Office 文件和视频：只有用户明确要求，或高价值页面指向具体 section 时才处理。
 
-默认跳过 `logseq/bak`、`.recycle`、临时上传和未引用大附件，除非用户明确要求。
+默认跳过备份目录、回收站、临时上传和未引用大附件，除非用户明确要求。
 
 ## 候选方法卡
 
@@ -22,7 +22,7 @@
 
 ```text
 method_name:
-source_paths:
+source_refs:
 use_when:
 core_steps:
 input_requirements:

@@ -35,7 +35,7 @@ cp -R . ~/.codex/skills/project-strategy-analyst
 
 ```text
 使用 project-strategy-analyst。
-请分析这份支付收入下滑 case，并输出数据正确性、数据审计轨迹、Driver Bridge、5Why、尚未证明和下一步检查。
+请分析这份业务指标下滑 case，并输出数据正确性、数据审计轨迹、Driver Bridge、5Why、尚未证明和下一步检查。
 ```
 
 ```text
@@ -61,6 +61,6 @@ project-strategy-analyst/
 
 ## 边界
 
-- 不包含原始 Logseq 笔记、日记、长摘录或私有案例。
+- 不包含原始笔记、日记、长摘录或私有案例。
 - 不内置数据库连接。
 - 不保存公司事实或项目事实；这些应进入项目自己的 `_project_memory/`。

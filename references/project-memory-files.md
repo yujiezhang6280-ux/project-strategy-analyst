@@ -26,7 +26,7 @@
 - 
 
 ## Latest Decisions
-- 2026-04-29:
+- YYYY-MM-DD:
 ```
 
 ## 继承文件
