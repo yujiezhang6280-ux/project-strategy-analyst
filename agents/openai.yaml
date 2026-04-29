@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目策略分析师"
+  short_description: "项目记忆、SQL 拆解与方法论路由"
+  default_prompt: "使用 $project-strategy-analyst 维护项目记忆、父子项目上下文、SQL 业务拆解，并加载最小必要的分析方法论。"

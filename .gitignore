@@ -1,0 +1,7 @@
+.DS_Store
+*.tmp
+raw_*
+sample_excerpt_*
+debug_*
+.ipynb_checkpoints/
+__pycache__/
