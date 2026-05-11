@@ -5,7 +5,7 @@ description: >
   SQL 业务拆解、问题诊断、指标分析、实验与因果审查、统计推理、
   算法/模型评估、产品增长分析、结构化报告和笔记方法论蒸馏。适合在需要恢复
   长期项目背景、维护项目记忆、审计 SQL 指标逻辑、拆解业务问题、区分相关性
-  与因果性、生成可读分析报告或沉淀可复用方法论时使用。
+  与因果性、生成可读分析报告、真实数据库访问前安全审计或沉淀可复用方法论时使用。
 ---
 
 # Project Strategy Analyst
@@ -24,6 +24,7 @@ description: >
 6. 如果这是新项目或刚恢复的项目，并且早期聊天还可见，先把可复用事实写入 `_project_memory/98-chat-intake.md`，避免压缩后丢失。
 7. 回答前按 `references/update-policy.md` 判断是否需要更新项目记忆。
 8. 用户提供 SQL 时，先按 `references/sql-decomposition-checklist.md` 做 SQL 业务拆解；只有问题需要诊断、指标、因果、统计、建模或报告结构时，才额外加载方法文件。
+9. 任务涉及真实数据库访问、执行 SQL、查表结构、导出数据、SSH/VPN/tunnel、Navicat、Keychain、1Password、Windows 密码库或任何凭证处理时，先读 `references/database-access-safety.md`。
 
 ## 核心工作流
 
@@ -253,6 +254,8 @@ methodology references 是共享分析手册，只指导如何推理，不存项
 
 ## SQL 处理
 
+如果 SQL 需要真实连库执行、查 schema、导出数据或使用任何凭证，必须先读 `references/database-access-safety.md`，按计划、审计、小样本、成本预估、确认、执行、复核的顺序处理。
+
 用户给 SQL 时：
 
 1. 复述 SQL 似乎要回答的业务问题。
@@ -283,4 +286,5 @@ methodology references 是共享分析手册，只指导如何推理，不存项
 - 创建或修复 `_project_memory/` 时，读 `references/project-memory-files.md`。
 - 决定覆盖、追加、提升或忽略时，读 `references/update-policy.md`。
 - 任务包含 SQL 分析时，读 `references/sql-decomposition-checklist.md`。
+- 任务涉及真实数据库访问、执行查询、查 schema、导出数据、SSH/VPN/tunnel 或凭证处理时，读 `references/database-access-safety.md`。
 - 任务需要分析方法时，读 `references/methodology-index.md`，再只加载被路由到的方法文件。
