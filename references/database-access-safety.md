@@ -31,7 +31,7 @@ Disallowed unless the user explicitly approves and the account is still safe:
 
 ## Query Gate
 
-Before every real query, show this compact audit:
+Before every SQL execution, including `SELECT 1`, schema inspection, samples, `EXPLAIN`, and final queries, show the exact SQL plus this compact audit:
 
 ```text
 目的：
@@ -42,19 +42,22 @@ SQL 类型：
 需要用户确认：
 ```
 
-The query may proceed only when the audit is low-risk or the user confirms the remaining risk.
+No SQL may run silently. Execute only after the user explicitly confirms the shown SQL and audit, unless the user has already granted a scoped standing approval for that exact limited query sequence in the current turn.
+
+After execution, report the exact SQL that ran, row count or result size, key result, and caveats. Do not return only data without the SQL. If the SQL is long, provide a local file path containing the SQL and include the key excerpt in chat.
 
 ## Safe Query Ladder
 
 1. Confirm connection path without exposing secrets.
-2. Run `SELECT 1`.
-3. Inspect only relevant schema.
-4. Take a small sample: explicit columns, time/partition filter if possible, `LIMIT 10-100`.
+2. Show and get approval for `SELECT 1`.
+3. Show and get approval before inspecting relevant schema.
+4. Show and get approval before taking a small sample: explicit columns, time/partition filter if possible, `LIMIT 10-100`.
 5. Confirm business meanings: status values, app/product ids, event names, time fields, dedupe grain, join keys.
-6. Use `EXPLAIN` or dry-run when available and safe.
-7. Run the constrained query.
+6. Show and get approval before `EXPLAIN` or dry-run when available and safe.
+7. Show and get approval before running the constrained query.
 8. Reconcile row counts, nulls, duplicates, denominator, and obvious anomalies.
-9. Update project memory only with confirmed reusable facts.
+9. Return the executed SQL with the result summary.
+10. Update project memory only with confirmed reusable facts.
 
 ## Do Not Guess
 
