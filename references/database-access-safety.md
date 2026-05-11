@@ -42,19 +42,21 @@ SQL 类型：
 需要用户确认：
 ```
 
-No SQL may run silently. Execute only after the user explicitly confirms the shown SQL and audit, unless the user has already granted a scoped standing approval for that exact limited query sequence in the current turn.
+No SQL may run invisibly: the user must see the SQL before execution. Low-risk SQL may run after showing the SQL and audit. High-risk, unclear, expensive, broad, sensitive, or business-semantics-dependent SQL must wait for explicit user confirmation.
 
 After execution, report the exact SQL that ran, row count or result size, key result, and caveats. Do not return only data without the SQL. If the SQL is long, provide a local file path containing the SQL and include the key excerpt in chat.
+
+Keep SQL readable for humans. Prefer direct joins, clear aliases, and staged small queries over deeply nested CTE stacks. Use CTEs only when they materially improve clarity; avoid many CTEs that hide business logic or make review hard. It is acceptable to do associations/joins, but join keys, grain, filters, and cardinality risk must be visible in the audit.
 
 ## Safe Query Ladder
 
 1. Confirm connection path without exposing secrets.
-2. Show and get approval for `SELECT 1`.
-3. Show and get approval before inspecting relevant schema.
-4. Show and get approval before taking a small sample: explicit columns, time/partition filter if possible, `LIMIT 10-100`.
+2. Show `SELECT 1` and audit before running; explicit approval is not required when risk is clearly low.
+3. Show schema-inspection SQL and audit before running; explicit approval is not required when scoped to relevant objects.
+4. Show sample SQL and audit before running: explicit columns, time/partition filter if possible, `LIMIT 10-100`.
 5. Confirm business meanings: status values, app/product ids, event names, time fields, dedupe grain, join keys.
-6. Show and get approval before `EXPLAIN` or dry-run when available and safe.
-7. Show and get approval before running the constrained query.
+6. Show `EXPLAIN` or dry-run SQL before running when available and safe.
+7. Show final constrained SQL and audit. Run automatically only if low-risk; otherwise wait for explicit confirmation.
 8. Reconcile row counts, nulls, duplicates, denominator, and obvious anomalies.
 9. Return the executed SQL with the result summary.
 10. Update project memory only with confirmed reusable facts.
