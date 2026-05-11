@@ -79,11 +79,12 @@ General:
 - Never ask the user to paste passwords into chat.
 - Never store secrets in skill files, project memory, SQL notes, data dictionaries, screenshots, or exported reports.
 - Avoid command forms that place passwords in shell history or process arguments.
+- Global command ban: do not run, recommend, document, or embed standalone commands that print secrets to stdout. In particular, `security find-generic-password ... -w` is forbidden for agent-run shells, examples, reusable scripts, and handoff docs.
 
 macOS recommended paths:
 
 - SSH tunnel plus MySQL client against `127.0.0.1:LOCAL_PORT`.
-- macOS Keychain via `security` with prompted password input. Use `-T ""` when creating secrets if the user wants explicit access prompts.
+- macOS Keychain can store passwords, but raw password retrieval must not be exposed to the agent. Use a user-owned local proxy/helper that executes the query without returning the password, or fall back to an interactive prompt.
 - 1Password CLI or enterprise vault if already configured.
 - Interactive `mysql -p` is acceptable for one-off access.
 
