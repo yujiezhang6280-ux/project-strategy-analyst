@@ -254,7 +254,13 @@ methodology references 是共享分析手册，只指导如何推理，不存项
 
 ## SQL 处理
 
-如果 SQL 需要真实连库执行、查 schema、导出数据或使用任何凭证，必须先读 `references/database-access-safety.md`，按计划、审计、小样本、成本预估、确认、执行、复核的顺序处理。
+如果 SQL 需要真实连库执行、查 schema、导出数据或使用任何凭证，必须先读 `references/database-access-safety.md`。默认执行契约：
+
+- 先运行本地 tunnel helper（如果存在），只做连接恢复，不暴露连接元数据。
+- 每次 SQL 执行前先展示 SQL 和短审计；高风险、口径不明或大查询必须等用户确认。
+- 默认小步查询，先 schema / 样本 / cheap count，再用 2-5 个可读 SQL 拼结果；非必要不写大 SQL。
+- 不猜业务枚举、状态值、时间字段或 join 粒度。
+- 表格结果默认交付 Excel `.xlsx`，中文字段名，可追溯原始字段和已执行 SQL。
 
 用户给 SQL 时：
 
