@@ -10,6 +10,7 @@
 - 父项目和子项目的上下文如何继承
 - 分析过程里的数据和计算能不能复查
 - 最终产物应该用 Excel 还是 Jupyter 承载
+- 真实数据库访问时如何安全连接、小步查询和输出 Excel
 
 ## 一句话理解
 
@@ -40,6 +41,7 @@ project-strategy-analyst/
     ├── algorithm-and-modeling.md
     ├── product-growth-methods.md
     ├── structured-thinking-and-reporting.md
+    ├── database-access-safety.md
     ├── sql-decomposition-checklist.md
     ├── project-memory-files.md
     ├── update-policy.md
@@ -56,6 +58,7 @@ project-strategy-analyst/
 | `references/project-memory-files.md` | 说明 `_project_memory/` 应该有哪些文件 |
 | `references/update-policy.md` | 说明对话后哪些信息该写入哪类记忆 |
 | `references/sql-decomposition-checklist.md` | SQL 业务拆解和审计清单 |
+| `references/database-access-safety.md` | 真实数据库访问安全门禁、自动 tunnel SOP、小步查询和 Excel 输出规则 |
 | `references/structured-thinking-and-reporting.md` | 报告结构、表格规则、Excel/Jupyter 产物规则 |
 
 ## 项目记忆结构
@@ -160,6 +163,7 @@ Codex 不应该一次性加载所有方法文件。
 | 增长、产品策略、竞品 | `product-growth-methods.md` |
 | 报告、老板摘要、图表叙事 | `structured-thinking-and-reporting.md` |
 | 笔记提炼成方法论 | `note-distillation.md` |
+| 真实数据库访问、查 schema、导出数据、SSH tunnel 或凭证处理 | `database-access-safety.md` |
 
 ## 怎么调用
 
@@ -196,6 +200,14 @@ SQL 审计：
 ```text
 使用 project-strategy-analyst。
 请审计这段 SQL：先解释业务问题，再说明基表、行粒度、join、过滤、去重、指标口径、数据审计轨迹和风险。
+```
+
+真实数据库访问：
+
+```text
+使用 project-strategy-analyst。
+我要查真实数据库。请先确认 tunnel helper / 连接状态，再展示 SQL 和审计。
+默认小步查询，结果交付 Excel，字段名用中文并保留 SQL 与字段映射。
 ```
 
 可审计分析产物：
