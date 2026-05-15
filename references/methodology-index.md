@@ -8,7 +8,7 @@
 2. 选择能支撑当前回答的最小方法集合。
 3. 默认只加载 1-3 个方法文件。
 4. 项目事实、定义、SQL 历史和决策优先从项目记忆读取，不从方法文件推断。
-5. 除非用户明确要求笔记蒸馏，不加载原始笔记、图片、PDF 或 highlights。
+5. 除非用户明确要求笔记蒸馏，不加载原始 Logseq 笔记、图片、PDF 或 highlights。
 
 ## 按任务路由
 
@@ -24,7 +24,7 @@
 | SQL query、表 join、过滤、行粒度、指标查询审计 | `sql-decomposition-checklist.md` | SQL checklist 优先；需要诊断或报告时再加方法文件。 |
 | 监察分析过程、复算中间数、检查 bridge 或 SQL 聚合是否对得上 | `structured-thinking-and-reporting.md`, `metric-analysis.md`, `sql-decomposition-checklist.md` | 区分数据正确性和数据审计轨迹；列输入、中间值、公式、输出和 residual。 |
 | 最终分析产物、Excel、Jupyter、过程留痕、公式、透视表、notebook 中文注释 | `structured-thinking-and-reporting.md` | 小数据优先 Excel 留公式/透视表；大数据优先 Jupyter 留完整过程和中文注释。 |
-| 阅读笔记、提炼框架、把笔记/highlights/images/PDF 转成 skill 内容 | `note-distillation.md` | 只蒸馏规则，不复制原文。 |
+| 阅读笔记、提炼框架、把 Logseq/pages/highlights/images/PDF 转成 skill 内容 | `note-distillation.md` | 只蒸馏规则，不复制原文。 |
 
 ## 常见场景默认组合
 
